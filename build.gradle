@@ -53,6 +53,7 @@ minecraft {
     }
     clientJvmArgs.addAll(args)
     serverJvmArgs.addAll(args)
+    useDepAts = true
 }
 
 repositories {
@@ -61,6 +62,16 @@ repositories {
     }
     maven {
         url = 'https://repo.spongepowered.org/maven'
+    }
+    maven {
+        url 'https://cursemaven.com'
+    }
+    maven {
+        url 'https://maven.blamejared.com/'
+    }
+    maven {
+        name = 'jei'
+        url = 'http://dvs1.progwml6.com/files/maven'
     }
 }
 
@@ -72,7 +83,13 @@ dependencies {
     if (project.use_mixins.toBoolean()) {
         compile 'zone.rong:mixinbooter:7.0'
     }
-    
+    deobfCompile ('CraftTweaker2:CraftTweaker2-MC1120-Mod-JEI:1.12-4.+') {
+        exclude group: 'deobf.mezz.jei'
+    }
+    deobfCompile 'curse.maven:zenutil-401178:4498964'
+    deobfCompile 'curse.maven:RedstoneFlux-270789:2920436'
+//    deobfCompile 'curse.maven:had-enough-items-557549:4451828'
+    deobfCompile 'mezz.jei:jei_1.12.2:4.16.1.302'
 }
 
 sourceSets {
