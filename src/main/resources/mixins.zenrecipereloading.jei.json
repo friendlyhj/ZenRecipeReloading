@@ -7,11 +7,6 @@
   "priority": 0,
   "refmap": "mixins.zenrecipereloading.refmap.json",
   "mixins": [
-    "crafttweaker.ActionBaseAddRecipeAccessor",
-    "crafttweaker.ActionBaseRemoveRecipesMixin",
-    "crafttweaker.ActionRemoveRecipesNoIngredientsAccessor",
-    "crafttweaker.ActionAddFurnaceRecipeAccessor",
-    "crafttweaker.ActionFurnaceRemoveRecipeAccessor"
   ],
   "client": [
     "jei.JEIProxyClientAccessor"
