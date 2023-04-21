@@ -1,4 +1,4 @@
-package youyihj.zenrecipereloading.util;
+package youyihj.zenrecipereloading.compat.vanilla;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import net.minecraft.item.crafting.IRecipe;

@@ -1,7 +1,10 @@
 package youyihj.zenrecipereloading.event;
 
 import crafttweaker.CraftTweakerAPI;
+import crafttweaker.mc1120.actions.ActionAddFurnaceRecipe;
+import crafttweaker.mc1120.actions.ActionFurnaceRemoveRecipe;
 import crafttweaker.mc1120.events.ScriptRunEvent;
+import crafttweaker.mc1120.furnace.MCFurnaceManager;
 import crafttweaker.mc1120.recipes.MCRecipeManager;
 import mezz.jei.JustEnoughItems;
 import net.minecraft.client.Minecraft;
@@ -16,6 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.ForgeRegistry;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
+import youyihj.zenrecipereloading.compat.vanilla.FurnaceRecipeCallbacks;
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionRemoveRecipesNoIngredientsAccessor;
 import youyihj.zenrecipereloading.mixins.jei.JEIProxyClientAccessor;
 import youyihj.zenutils.api.reload.IActionReloadCallbackFactory;
@@ -30,6 +34,8 @@ public class EventHandler {
     public static void registerActionCallbacks(ScriptRunEvent.Pre event) {
         IActionReloadCallbackFactory.register(MCRecipeManager.ActionBaseAddRecipe.class, CraftingRecipeCallbacks.RecipeAddition::new);
         IActionReloadCallbackFactory.register(MCRecipeManager.ActionBaseRemoveRecipes.class, CraftingRecipeCallbacks.RecipeRemoval::new);
+        IActionReloadCallbackFactory.register(ActionAddFurnaceRecipe.class, FurnaceRecipeCallbacks.Addition::new);
+        IActionReloadCallbackFactory.register(ActionFurnaceRemoveRecipe.class, FurnaceRecipeCallbacks.Removal::new);
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -37,6 +43,8 @@ public class EventHandler {
         MCRecipeManager.refreshRecipes();
         MCRecipeManager.recipesToRemove.clear();
         MCRecipeManager.recipesToAdd.clear();
+        MCFurnaceManager.recipesToAdd.clear();
+        MCFurnaceManager.recipesToRemove.clear();
         ((ActionRemoveRecipesNoIngredientsAccessor) MCRecipeManager.actionRemoveRecipesNoIngredients).getOutputs().clear();
         CraftingRecipeCallbacks.getRecipeRegistry().unfreeze();
     }
@@ -46,6 +54,8 @@ public class EventHandler {
         CraftTweakerAPI.apply(MCRecipeManager.actionRemoveRecipesNoIngredients);
         MCRecipeManager.recipesToRemove.forEach(CraftTweakerAPI::apply);
         MCRecipeManager.recipesToAdd.forEach(CraftTweakerAPI::apply);
+        MCFurnaceManager.recipesToAdd.forEach(CraftTweakerAPI::apply);
+        MCFurnaceManager.recipesToRemove.forEach(CraftTweakerAPI::apply);
         CraftingRecipeCallbacks.getRecipeRegistry().freeze();
     }
 }

@@ -7,16 +7,10 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.registries.ForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryModifiable;
-import org.apache.commons.lang3.tuple.Pair;
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionBaseAddRecipeAccessor;
 import youyihj.zenrecipereloading.mixins.forge.ForgeRegistryAccessor;
-import youyihj.zenrecipereloading.util.ActionBaseRemoveRecipesAccessor;
 import youyihj.zenutils.api.reload.ActionReloadCallback;
-import youyihj.zenutils.impl.util.ReflectUtils;
 
-import java.lang.reflect.Method;
-import java.util.List;
 import java.util.Objects;
 
 /**

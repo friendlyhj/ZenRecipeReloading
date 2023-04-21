@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
-import youyihj.zenrecipereloading.util.ActionBaseRemoveRecipesAccessor;
+import youyihj.zenrecipereloading.compat.vanilla.ActionBaseRemoveRecipesAccessor;
 
 import java.util.List;
 

@@ -9,7 +9,9 @@
   "mixins": [
     "crafttweaker.ActionBaseAddRecipeAccessor",
     "crafttweaker.ActionBaseRemoveRecipesMixin",
-    "crafttweaker.ActionRemoveRecipesNoIngredientsAccessor"
+    "crafttweaker.ActionRemoveRecipesNoIngredientsAccessor",
+    "crafttweaker.ActionAddFurnaceRecipeAccessor",
+    "crafttweaker.ActionFurnaceRemoveRecipeAccessor"
   ],
   "client": [
     "jei.JEIProxyClientAccessor"
