@@ -70,6 +70,9 @@ repositories {
         url 'https://maven.blamejared.com/'
     }
     maven {
+        url 'https://friendlyhj.github.io/maven'
+    }
+    maven {
         name = 'jei'
         url = 'http://dvs1.progwml6.com/files/maven'
     }
@@ -86,7 +89,7 @@ dependencies {
     deobfCompile ('CraftTweaker2:CraftTweaker2-MC1120-Mod-JEI:1.12-4.+') {
         exclude group: 'deobf.mezz.jei'
     }
-    deobfCompile 'curse.maven:zenutil-401178:4498964'
+    deobfCompile 'youyihj:zenutils:1.13.4'
     deobfCompile 'curse.maven:RedstoneFlux-270789:2920436'
 //    deobfCompile 'curse.maven:had-enough-items-557549:4451828'
     deobfCompile 'mezz.jei:jei_1.12.2:4.16.1.302'
