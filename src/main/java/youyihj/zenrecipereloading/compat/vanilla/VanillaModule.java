@@ -1,8 +1,7 @@
 package youyihj.zenrecipereloading.compat.vanilla;
 
 import crafttweaker.CraftTweakerAPI;
-import crafttweaker.mc1120.actions.ActionAddFurnaceRecipe;
-import crafttweaker.mc1120.actions.ActionFurnaceRemoveRecipe;
+import crafttweaker.mc1120.actions.*;
 import crafttweaker.mc1120.furnace.MCFurnaceManager;
 import crafttweaker.mc1120.recipes.MCRecipeManager;
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionRemoveRecipesNoIngredientsAccessor;
@@ -23,6 +22,10 @@ public class VanillaModule extends PlainModule {
         addCallbackFactory(MCRecipeManager.ActionBaseAddRecipe.class, CraftingRecipeCallbacks.RecipeAddition::new);
         addCallbackFactory(ActionAddFurnaceRecipe.class, FurnaceRecipeCallbacks.Addition::new);
         addCallbackFactory(ActionFurnaceRemoveRecipe.class, FurnaceRecipeCallbacks.Removal::new);
+        addCallbackFactory(ActionSetFuel.class, FurnaceRecipeCallbacks.SetFuel::new);
+        addCallbackFactory(ActionOreDictAddAll.class, OreDictCallbacks.AddAll::new);
+        addCallbackFactory(ActionOreDictAddItem.class, OreDictCallbacks.AddItem::new);
+        addCallbackFactory(ActionOreDictRemoveItem.class, OreDictCallbacks.RemoveItem::new);
     }
 
     @Override
