@@ -12,7 +12,6 @@ import youyihj.zenrecipereloading.mixins.crafttweaker.ActionAddFurnaceRecipeAcce
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionFurnaceRemoveRecipeAccessor;
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionSetFuelAccessor;
 import youyihj.zenrecipereloading.util.MixinAccessibleActionReloadCallback;
-import youyihj.zenutils.api.reload.ActionReloadCallback;
 
 import java.util.Map;
 
@@ -20,7 +19,7 @@ import java.util.Map;
  * @author youyihj
  */
 public class FurnaceRecipeCallbacks {
-    public static class Addition extends ActionReloadCallback<ActionAddFurnaceRecipe> {
+    public static class Addition extends MixinAccessibleActionReloadCallback<ActionAddFurnaceRecipe, ActionAddFurnaceRecipeAccessor> {
 
         public Addition(ActionAddFurnaceRecipe action) {
             super(action);
@@ -28,8 +27,7 @@ public class FurnaceRecipeCallbacks {
 
         @Override
         public void undo() {
-            ActionAddFurnaceRecipeAccessor actionAccessor = (ActionAddFurnaceRecipeAccessor) action;
-            for (ItemStack itemStack : actionAccessor.getInput()) {
+            for (ItemStack itemStack : getActionAccessor().getInput()) {
                 FurnaceRecipes.instance().getSmeltingList().remove(itemStack);
                 FurnaceRecipes.instance().experienceList.remove(itemStack);
             }
@@ -41,7 +39,7 @@ public class FurnaceRecipeCallbacks {
         }
     }
 
-    public static class Removal extends ActionReloadCallback<ActionFurnaceRemoveRecipe> {
+    public static class Removal extends MixinAccessibleActionReloadCallback<ActionFurnaceRemoveRecipe, ActionFurnaceRemoveRecipeAccessor> {
 
         public Removal(ActionFurnaceRemoveRecipe action) {
             super(action);
@@ -49,8 +47,7 @@ public class FurnaceRecipeCallbacks {
 
         @Override
         public void undo() {
-            ActionFurnaceRemoveRecipeAccessor actionAccessor = (ActionFurnaceRemoveRecipeAccessor) action;
-            for (Map.Entry<ItemStack, ItemStack> entry : actionAccessor.getSmeltingMap().entrySet()) {
+            for (Map.Entry<ItemStack, ItemStack> entry : getActionAccessor().getSmeltingMap().entrySet()) {
                 // don't retain xp, I think it is ok?
                 FurnaceRecipes.instance().addSmeltingRecipe(entry.getKey(), entry.getValue(), 0);
             }
