@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
+import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
 import youyihj.zenrecipereloading.compat.vanilla.DummyRecipe;
 import youyihj.zenrecipereloading.compat.vanilla.VanillaModule;
@@ -38,6 +39,7 @@ public class ZenRecipeReloading {
     public void preinit(FMLPreInitializationEvent event) {
         CraftingRecipeCallbacks.getRecipeRegistryAccessor().setDummyFactory((rl) -> new DummyRecipe().setRegistryName(rl));
         ModuleRegistry.modules.add(new VanillaModule());
+        ModuleRegistry.modules.add(new JEIModule());
     }
 
     /**
