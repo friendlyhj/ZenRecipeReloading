@@ -9,4 +9,6 @@ Dependencies:
 
 Supported Operations:
 
-* Crafting table recipe addition & removal
+* Crafting table recipes (except `replaceAllOccurrence`)
+* Furnace recipes and fuel
+* JEI hide and description
