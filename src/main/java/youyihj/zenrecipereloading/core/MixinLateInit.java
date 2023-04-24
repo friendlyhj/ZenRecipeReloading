@@ -5,7 +5,6 @@ import net.minecraftforge.fml.common.Loader;
 import youyihj.zenutils.api.util.ReflectionInvoked;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +15,8 @@ import java.util.stream.Collectors;
 public class MixinLateInit implements ILateMixinLoader {
     private final List<String> mods = Lists.newArrayList(
             "crafttweaker",
-            "jei"
+            "jei",
+            "modtweaker"
     );
 
     @Override

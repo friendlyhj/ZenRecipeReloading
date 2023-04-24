@@ -1,12 +1,14 @@
 package youyihj.zenrecipereloading;
 
 import crafttweaker.mc1120.commands.CTChatCommand;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
+import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
 import youyihj.zenrecipereloading.compat.vanilla.DummyRecipe;
 import youyihj.zenrecipereloading.compat.vanilla.VanillaModule;
@@ -40,6 +42,9 @@ public class ZenRecipeReloading {
         CraftingRecipeCallbacks.getRecipeRegistryAccessor().setDummyFactory((rl) -> new DummyRecipe().setRegistryName(rl));
         ModuleRegistry.modules.add(new VanillaModule());
         ModuleRegistry.modules.add(new JEIModule());
+        if (Loader.isModLoaded("modtweaker")) {
+            ModuleRegistry.modules.add(new ModTweakerModule());
+        }
     }
 
     /**
