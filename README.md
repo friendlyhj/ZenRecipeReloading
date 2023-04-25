@@ -11,4 +11,8 @@ Supported Operations:
 
 * Crafting table recipes (except `replaceAllOccurrence`)
 * Furnace recipes and fuel
+* Ore Dictionary (except `mirror`)
 * JEI hide and description
+* Actually Addition (Needs ModTweaker)
+* Blood Magic (Needs ModTweaker)
+* Botania (Needs ModTweaker, except lexicon)
