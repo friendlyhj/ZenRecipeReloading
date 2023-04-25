@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
+import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
@@ -51,6 +52,9 @@ public class ZenRecipeReloading {
             modules.add(new ModTweakerModule());
             if (Loader.isModLoaded("bloodmagic")) {
                 modules.add(new BloodMagicModule());
+            }
+            if (Loader.isModLoaded("botania")) {
+                modules.add(new BotaniaModule());
             }
         }
     }
