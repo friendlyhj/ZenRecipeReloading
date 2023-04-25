@@ -7,12 +7,16 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
+import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
 import youyihj.zenrecipereloading.compat.vanilla.DummyRecipe;
 import youyihj.zenrecipereloading.compat.vanilla.VanillaModule;
+import youyihj.zenrecipereloading.module.IModule;
 import youyihj.zenrecipereloading.module.ModuleRegistry;
+
+import java.util.Collection;
 
 @Mod(
         modid = ZenRecipeReloading.MOD_ID,
@@ -39,11 +43,15 @@ public class ZenRecipeReloading {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
+        Collection<IModule> modules = ModuleRegistry.modules;
         CraftingRecipeCallbacks.getRecipeRegistryAccessor().setDummyFactory((rl) -> new DummyRecipe().setRegistryName(rl));
-        ModuleRegistry.modules.add(new VanillaModule());
-        ModuleRegistry.modules.add(new JEIModule());
+        modules.add(new VanillaModule());
+        modules.add(new JEIModule());
         if (Loader.isModLoaded("modtweaker")) {
-            ModuleRegistry.modules.add(new ModTweakerModule());
+            modules.add(new ModTweakerModule());
+            if (Loader.isModLoaded("bloodmagic")) {
+                modules.add(new BloodMagicModule());
+            }
         }
     }
 
