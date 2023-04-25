@@ -7,7 +7,8 @@ import youyihj.zenrecipereloading.util.PrivateActionReloadCallback;
  * @author youyihj
  */
 public class BotaniaModule extends PlainModule {
-    public BotaniaModule() {
+    @Override
+    public void registerReloadCallbacks() {
         PrivateActionReloadCallback.uncheckedRegister("com.blamejared.compat.botania.handlers.Orechid$Add", OrechidCallbacks.Add::new);
         PrivateActionReloadCallback.uncheckedRegister("com.blamejared.compat.botania.handlers.Orechid$Remove", OrechidCallbacks.Remove::new);
         PrivateActionReloadCallback.uncheckedRegister("com.blamejared.compat.botania.handlers.OrechidIgnem$Add", OrechidNetherCallbacks.Add::new);
