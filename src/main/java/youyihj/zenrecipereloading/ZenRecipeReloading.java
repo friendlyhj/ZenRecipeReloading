@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
+import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
@@ -30,7 +31,7 @@ public class ZenRecipeReloading {
     public static final String MOD_ID = "zenrecipereloading";
     public static final String MOD_NAME = "ZenRecipeReloading";
     public static final String VERSION = "1.0";
-    public static final String DEPENDENCIES = "required-after:zenutils@[1.13.3,);required-after:jei";
+    public static final String DEPENDENCIES = "required-after:zenutils@[1.13.3,);required-after:jei;required-after:modtweaker";
 
     /**
      * This is the instance of your mod as created by Forge. It will never be null.
@@ -48,14 +49,15 @@ public class ZenRecipeReloading {
         CraftingRecipeCallbacks.getRecipeRegistryAccessor().setDummyFactory((rl) -> new DummyRecipe().setRegistryName(rl));
         modules.add(new VanillaModule());
         modules.add(new JEIModule());
-        if (Loader.isModLoaded("modtweaker")) {
-            modules.add(new ModTweakerModule());
-            if (Loader.isModLoaded("bloodmagic")) {
-                modules.add(new BloodMagicModule());
-            }
-            if (Loader.isModLoaded("botania")) {
-                modules.add(new BotaniaModule());
-            }
+        modules.add(new ModTweakerModule());
+        if (Loader.isModLoaded("bloodmagic")) {
+            modules.add(new BloodMagicModule());
+        }
+        if (Loader.isModLoaded("botania")) {
+            modules.add(new BotaniaModule());
+        }
+        if (Loader.isModLoaded("forestry")) {
+            modules.add(new ForestryModule());
         }
     }
 

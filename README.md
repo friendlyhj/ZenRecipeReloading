@@ -6,6 +6,7 @@ Dependencies:
 
 * [ZenUtils](https://www.curseforge.com/minecraft/mc-mods/zenutil) 1.13.3 or above
 * Just Enough Items
+* ModTweaker
 
 Supported Operations:
 
@@ -13,6 +14,7 @@ Supported Operations:
 * Furnace recipes and fuel
 * Ore Dictionary (except `mirror`)
 * JEI hide and description
-* Actually Addition (Needs ModTweaker)
-* Blood Magic (Needs ModTweaker)
-* Botania (Needs ModTweaker, except lexicon)
+* Actually Addition
+* Blood Magic
+* Botania (except lexicon)
+* Forestry
