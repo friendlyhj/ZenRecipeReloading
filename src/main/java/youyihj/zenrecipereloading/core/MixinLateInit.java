@@ -16,7 +16,8 @@ public class MixinLateInit implements ILateMixinLoader {
     private final List<String> mods = Lists.newArrayList(
             "crafttweaker",
             "jei",
-            "modtweaker"
+            "modtweaker",
+            "forestry"
     );
 
     @Override

@@ -19,22 +19,34 @@ public abstract class ReflectionAccessibleActionReloadCallback<T extends IAction
 
     @SuppressWarnings("unchecked")
     protected <U> U getActionField(String fieldName) {
-        Class<? extends IAction> clazz = action.getClass();
-        Field field = FIELD_CACHE.get(clazz, fieldName);
-        if (field == null) {
-            try {
-                field = clazz.getDeclaredField(fieldName);
-                field.setAccessible(true);
-                FIELD_CACHE.put(clazz, fieldName, field);
-            } catch (NoSuchFieldException e) {
-                throw new RuntimeException(e);
-            }
-        }
         try {
-            return (U) field.get(action);
-        } catch (IllegalAccessException e) {
+            return (U) findField(fieldName).get(action);
+        } catch (IllegalAccessException | NoSuchFieldException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private Field findField(String fieldName) throws NoSuchFieldException {
+        Class<? extends IAction> actionClass = action.getClass();
+        Field field = FIELD_CACHE.get(actionClass, fieldName);
+        if (field == null) {
+            for (Class<?> clazz = actionClass; clazz != null; clazz = clazz.getSuperclass()) {
+                try {
+                    field = clazz.getDeclaredField(fieldName);
+                    break;
+                } catch (NoSuchFieldException ignored) {
+
+                }
+            }
+            if (field != null) {
+                field.setAccessible(true);
+                FIELD_CACHE.put(actionClass, fieldName, field);
+            } else {
+                //noinspection DataFlowIssue
+                throw new NoSuchFieldException(fieldName + " does not exist in " + actionClass.getSimpleName() + " or any of its superclasses.");
+            }
+        }
+        return field;
     }
 
 }

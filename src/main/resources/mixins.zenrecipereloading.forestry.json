@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "youyihj.zenrecipereloading.mixins.forestry",
+  "minVersion": "0.7.11",
+  "setSourceFile": true,
+  "priority": 0,
+  "refmap": "mixins.zenrecipereloading.refmap.json",
+  "mixins": [
+    "BaseRemoveForestryAccessor",
+    "BaseAddForestryAccessor"
+  ],
+  "client": [
+  ]
+}
