@@ -6,19 +6,18 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
+import youyihj.zenrecipereloading.compat.thermalexpansion.ThermalExpansionModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
 import youyihj.zenrecipereloading.compat.vanilla.DummyRecipe;
 import youyihj.zenrecipereloading.compat.vanilla.VanillaModule;
-import youyihj.zenrecipereloading.module.IModule;
 import youyihj.zenrecipereloading.module.ModuleRegistry;
-
-import java.util.Collection;
 
 @Mod(
         modid = ZenRecipeReloading.MOD_ID,
@@ -39,25 +38,30 @@ public class ZenRecipeReloading {
     @Mod.Instance(MOD_ID)
     public static ZenRecipeReloading INSTANCE;
 
+    public static Logger logger;
+
     /**
      * This is the first initialization event. Register tile entities here.
      * The registry events below will have fired prior to entry to this method.
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        Collection<IModule> modules = ModuleRegistry.modules;
+        logger = event.getModLog();
         CraftingRecipeCallbacks.getRecipeRegistryAccessor().setDummyFactory((rl) -> new DummyRecipe().setRegistryName(rl));
-        modules.add(new VanillaModule());
-        modules.add(new JEIModule());
-        modules.add(new ModTweakerModule());
+        ModuleRegistry.register(new VanillaModule());
+        ModuleRegistry.register(new JEIModule());
+        ModuleRegistry.register(new ModTweakerModule());
         if (Loader.isModLoaded("bloodmagic")) {
-            modules.add(new BloodMagicModule());
+            ModuleRegistry.register(new BloodMagicModule());
         }
         if (Loader.isModLoaded("botania")) {
-            modules.add(new BotaniaModule());
+            ModuleRegistry.register(new BotaniaModule());
         }
         if (Loader.isModLoaded("forestry")) {
-            modules.add(new ForestryModule());
+            ModuleRegistry.register(new ForestryModule());
+        }
+        if (Loader.isModLoaded("thermalexpansion")) {
+            ModuleRegistry.register(new ThermalExpansionModule());
         }
     }
 

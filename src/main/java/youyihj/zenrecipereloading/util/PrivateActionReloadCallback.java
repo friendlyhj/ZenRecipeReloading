@@ -13,12 +13,17 @@ public abstract class PrivateActionReloadCallback extends ReflectionAccessibleAc
     }
 
     @SuppressWarnings("unchecked")
-    public static void uncheckedRegister(String className, IActionReloadCallbackFactory<IAction> factory) {
+    public static void uncheckedRegister(String className, Factory factory) {
         try {
             Class<IAction> clazz = (Class<IAction>) Class.forName(className);
             IActionReloadCallbackFactory.register(clazz, factory);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("No such action class", e);
         }
+    }
+
+    public interface Factory extends IActionReloadCallbackFactory<IAction> {
+        @Override
+        PrivateActionReloadCallback create(IAction action);
     }
 }

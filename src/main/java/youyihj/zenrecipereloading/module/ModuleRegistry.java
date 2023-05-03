@@ -8,4 +8,8 @@ import java.util.Collection;
  */
 public class ModuleRegistry {
     public static final Collection<IModule> modules = new ArrayList<>();
+
+    public static void register(IModule module) {
+        modules.add(module);
+    }
 }

@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class PlainModule implements IModule {
     private final Map<Class<?>, IActionReloadCallbackFactory<?>> callbackFactories = new HashMap<>();
-    private final List<Collection<IAction>> trackActions = new ArrayList<>();
+    private final List<Collection<? extends IAction>> trackActions = new ArrayList<>();
 
     @Override
     public void registerReloadCallbacks() {
@@ -23,9 +23,8 @@ public class PlainModule implements IModule {
         callbackFactories.put(clazz, callbackFactory);
     }
 
-    @SuppressWarnings("unchecked")
     public void trackActions(Collection<? extends IAction> actions) {
-        trackActions.add(((Collection<IAction>) actions));
+        trackActions.add(actions);
     }
 
     @SuppressWarnings("unchecked")
