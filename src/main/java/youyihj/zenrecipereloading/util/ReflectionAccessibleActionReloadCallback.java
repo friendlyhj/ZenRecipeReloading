@@ -18,7 +18,7 @@ public abstract class ReflectionAccessibleActionReloadCallback<T extends IAction
     }
 
     @SuppressWarnings("unchecked")
-    protected <U> U getActionField(String fieldName) {
+    protected final <U> U getActionField(String fieldName) {
         try {
             return (U) findField(fieldName).get(action);
         } catch (IllegalAccessException | NoSuchFieldException e) {

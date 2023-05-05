@@ -59,6 +59,28 @@ public class ThermalExpansionModule implements IModule {
         PrivateActionReloadCallback.uncheckedRegister(TransposerCallbacks.getActionName("AddFill"), TransposerCallbacks.AddFill::new);
         PrivateActionReloadCallback.uncheckedRegister(TransposerCallbacks.getActionName("RemoveExtract"), TransposerCallbacks.RemoveExtract::new);
         PrivateActionReloadCallback.uncheckedRegister(TransposerCallbacks.getActionName("RemoveFill"), TransposerCallbacks.RemoveFill::new);
+
+        PrivateActionReloadCallback.uncheckedRegister(CompressionDynamoCallbacks.getActionName("Add"), CompressionDynamoCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(CompressionDynamoCallbacks.getActionName("Remove"), CompressionDynamoCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(EnervationDynamoCallbacks.getActionName("Add"), EnervationDynamoCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(EnervationDynamoCallbacks.getActionName("Remove"), EnervationDynamoCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(MagmaticDynamoCallbacks.getActionName("Add"), MagmaticDynamoCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(MagmaticDynamoCallbacks.getActionName("Remove"), MagmaticDynamoCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(NumisticDynamoCallbacks.getActionName("Add"), NumisticDynamoCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(NumisticDynamoCallbacks.getActionName("Remove"), NumisticDynamoCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(NumisticDynamoCallbacks.getActionName("AddGem"), NumisticDynamoCallbacks.AddGem::new);
+        PrivateActionReloadCallback.uncheckedRegister(NumisticDynamoCallbacks.getActionName("RemoveGem"), NumisticDynamoCallbacks.RemoveGem::new);
+        PrivateActionReloadCallback.uncheckedRegister(ReactantDynamoCallbacks.getActionName("Add"), ReactantDynamoCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(ReactantDynamoCallbacks.getActionName("Remove"), ReactantDynamoCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(ReactantDynamoCallbacks.getActionName("AddElemental"), ReactantDynamoCallbacks.AddElemental::new);
+        PrivateActionReloadCallback.uncheckedRegister(ReactantDynamoCallbacks.getActionName("RemoveElemental"), ReactantDynamoCallbacks.RemoveElemental::new);
+        PrivateActionReloadCallback.uncheckedRegister(SteamDynamoCallbacks.getActionName("Add"), SteamDynamoCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(SteamDynamoCallbacks.getActionName("Remove"), SteamDynamoCallbacks.Remove::new);
+
+        PrivateActionReloadCallback.uncheckedRegister(CoolantCallbacks.getActionName("ActionRemoveCoolant"), CoolantCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(CoolantCallbacks.getActionName("ActionAddCoolant"), CoolantCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(FactorizerCallbacks.getActionName("ActionRemoveFactorizer"), FactorizerCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(FactorizerCallbacks.getActionName("ActionAddFactorizer"), FactorizerCallbacks.Add::new);
     }
 
     @Override

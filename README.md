@@ -18,3 +18,4 @@ Supported Operations:
 * Blood Magic
 * Botania (except lexicon)
 * Forestry
+* Thermal Expansion
