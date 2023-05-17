@@ -178,6 +178,7 @@ dependencies {
         exclude group: 'mezz.jei'
     }
     deobfCompile "blusunrize:ImmersiveEngineering:0.12-92-559"
+    deobfCompile "curse.maven:avaritia-261348:3143349"
 }
 
 sourceSets {

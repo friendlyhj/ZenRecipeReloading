@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
+import youyihj.zenrecipereloading.compat.avaritia.AvaritiaModule;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
@@ -62,6 +63,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("thermalexpansion")) {
             ModuleRegistry.register(new ThermalExpansionModule());
+        }
+        if (Loader.isModLoaded("avaritia")) {
+            ModuleRegistry.register(new AvaritiaModule());
         }
     }
 

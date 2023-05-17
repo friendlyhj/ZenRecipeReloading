@@ -19,3 +19,4 @@ Supported Operations:
 * Botania (except lexicon)
 * Forestry
 * Thermal Expansion
+* Avaritia
