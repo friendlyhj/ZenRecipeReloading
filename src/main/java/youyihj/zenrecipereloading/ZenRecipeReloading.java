@@ -12,6 +12,7 @@ import youyihj.zenrecipereloading.compat.avaritia.AvaritiaModule;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
+import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.thermalexpansion.ThermalExpansionModule;
@@ -66,6 +67,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("avaritia")) {
             ModuleRegistry.register(new AvaritiaModule());
+        }
+        if (Loader.isModLoaded("immersiveengieering")) {
+            ModuleRegistry.register(new ImmersiveEngineeringModule());
         }
     }
 

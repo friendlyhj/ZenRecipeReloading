@@ -20,3 +20,4 @@ Supported Operations:
 * Forestry
 * Thermal Expansion
 * Avaritia
+* Immersive Engineering
