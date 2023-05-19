@@ -18,7 +18,8 @@ public class MixinLateInit implements ILateMixinLoader {
             "jei",
             "modtweaker",
             "forestry",
-            "avaritia"
+            "avaritia",
+            "tconstruct"
     );
 
     @Override

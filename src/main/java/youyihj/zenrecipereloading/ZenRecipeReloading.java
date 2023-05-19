@@ -1,6 +1,7 @@
 package youyihj.zenrecipereloading;
 
 import crafttweaker.mc1120.commands.CTChatCommand;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -15,6 +16,7 @@ import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
+import youyihj.zenrecipereloading.compat.tconstruct.TconstructModule;
 import youyihj.zenrecipereloading.compat.thermalexpansion.ThermalExpansionModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
 import youyihj.zenrecipereloading.compat.vanilla.DummyRecipe;
@@ -70,6 +72,10 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("immersiveengieering")) {
             ModuleRegistry.register(new ImmersiveEngineeringModule());
+        }
+        if (Loader.isModLoaded("tconstruct")) {
+            ModuleRegistry.register(TconstructModule.INSTANCE);
+            MinecraftForge.EVENT_BUS.register(TconstructModule.INSTANCE);
         }
     }
 

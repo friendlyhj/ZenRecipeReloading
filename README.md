@@ -21,3 +21,4 @@ Supported Operations:
 * Thermal Expansion
 * Avaritia
 * Immersive Engineering
+* Tinker's Construct
