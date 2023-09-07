@@ -53,7 +53,7 @@ minecraft {
     }
     clientJvmArgs.addAll(args)
     serverJvmArgs.addAll(args)
-    useDepAts = true
+    useDepAts = false
 }
 
 repositories {
@@ -152,9 +152,9 @@ dependencies {
         exclude group: 'mezz.jei'
     }
 
-    deobfCompile("betterwithmods:BetterWithMods:1.12-2.3.24-1068") {
-        exclude group: 'mezz.jei'
-    }
+//    deobfCompile("betterwithmods:BetterWithMods:1.12-2.3.24-1068") {
+//        exclude group: 'mezz.jei'
+//    }
     deobfCompile("de.ellpeck.actuallyadditions:ActuallyAdditions:1.12.2-r152.16") {
         exclude group: 'mezz.jei'
     }
@@ -168,9 +168,9 @@ dependencies {
         exclude group: 'mezz.jei'
     }
     deobfCompile "team.chisel.ctm:CTM:MC1.12.2-1.0.2.31"
-    deobfCompile("knightminer.tcomplement:TinkersComplement:1.12.2-0.4.2.39") {
-        exclude group: 'mezz.jei'
-    }
+//    deobfCompile("knightminer.tcomplement:TinkersComplement:1.12.2-0.4.2.39") {
+//        exclude group: 'mezz.jei'
+//    }
     deobfCompile "team.chisel:Chisel:MC1.12.2-1.0.2.45"
     deobfCompile "curse.maven:bloodmagic-224791:2610083"
     deobfCompile "curse.maven:guideapi-228832:2645992"
@@ -179,6 +179,7 @@ dependencies {
     }
     deobfCompile "blusunrize:ImmersiveEngineering:0.12-92-559"
     deobfCompile "curse.maven:avaritia-261348:3143349"
+    deobfCompile "curse.maven:gregtech-ce-unofficial-557242:4701483"
 }
 
 sourceSets {
