@@ -55,7 +55,7 @@ public class CraftingRecipeCallbacks {
 
         @Override
         public void afterApply(boolean reload) {
-            snapshot = getActionAccessor().getRemovedRecipes();
+            snapshot = getActionAccessor().zenRecipeReload$getRemovedRecipes();
             for (Int2ObjectMap.Entry<IRecipe> entry : snapshot.int2ObjectEntrySet()) {
                 getRecipeRegistryAccessor().callMarkDummy(entry.getValue().getRegistryName(), entry.getIntKey());
             }
