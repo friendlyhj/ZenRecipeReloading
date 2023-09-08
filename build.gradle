@@ -178,8 +178,12 @@ dependencies {
         exclude group: 'mezz.jei'
     }
     deobfCompile "blusunrize:ImmersiveEngineering:0.12-92-559"
+    // End From ModTweaker
+
     deobfCompile "curse.maven:avaritia-261348:3143349"
     deobfCompile "curse.maven:gregtech-ce-unofficial-557242:4701483"
+    deobfCompile "curse.maven:extended-crafting-nomifactory-edition-398267:4592627"
+    deobfCompile "curse.maven:cucumber-272335:2645867"
 }
 
 sourceSets {

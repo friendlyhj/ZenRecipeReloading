@@ -12,6 +12,7 @@ import youyihj.zenrecipereloading.command.ReloadJEICommand;
 import youyihj.zenrecipereloading.compat.avaritia.AvaritiaModule;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
+import youyihj.zenrecipereloading.compat.extendedcrafting.ExtendedCraftingModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
@@ -76,6 +77,9 @@ public class ZenRecipeReloading {
         if (Loader.isModLoaded("tconstruct")) {
             ModuleRegistry.register(TconstructModule.INSTANCE);
             MinecraftForge.EVENT_BUS.register(TconstructModule.INSTANCE);
+        }
+        if (Loader.isModLoaded("extendedcrafting")) {
+            ModuleRegistry.register(new ExtendedCraftingModule());
         }
     }
 
