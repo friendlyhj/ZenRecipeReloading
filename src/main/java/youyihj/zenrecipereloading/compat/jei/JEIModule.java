@@ -28,4 +28,9 @@ public class JEIModule extends PlainModule {
         JEI.HIDDEN_LIQUIDS.clear();
         JEI.HIDDEN_CATEGORIES.clear();
     }
+
+    @Override
+    public void onReloadPost(ScriptReloadEvent.Post event) {
+        // shouldn't apply tracked actions, they are applied while jei reloading
+    }
 }
