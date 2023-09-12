@@ -23,7 +23,7 @@ public class FactorizerCallbacks {
 
         @Override
         public void undo() {
-            ItemStack input = CraftTweakerMC.getItemStack(getActionField("input"));
+            ItemStack input = CraftTweakerMC.getItemStack((IItemStack) getActionField("input"));
             String type = getActionField("type").toString();
             switch (type) {
                 case "Spilt":
