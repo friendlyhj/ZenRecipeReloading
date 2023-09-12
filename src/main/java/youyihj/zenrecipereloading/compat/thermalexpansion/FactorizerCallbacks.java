@@ -2,6 +2,7 @@ package youyihj.zenrecipereloading.compat.thermalexpansion;
 
 import cofh.thermalexpansion.util.managers.device.FactorizerManager;
 import crafttweaker.IAction;
+import crafttweaker.api.item.IItemStack;
 import crafttweaker.api.minecraft.CraftTweakerMC;
 import net.minecraft.item.ItemStack;
 import youyihj.zenrecipereloading.util.PrivateActionReloadCallback;
@@ -53,7 +54,7 @@ public class FactorizerCallbacks {
 
         @Override
         public void beforeApply(boolean reload) {
-            recipe = FactorizerManager.getRecipe(CraftTweakerMC.getItemStack(getActionField("input")), getActionField("isSplit"));
+            recipe = FactorizerManager.getRecipe(CraftTweakerMC.getItemStack((IItemStack) getActionField("input")), getActionField("isSplit"));
         }
 
         @Override
