@@ -184,6 +184,9 @@ dependencies {
     deobfCompile "curse.maven:gregtech-ce-unofficial-557242:4701483"
     deobfCompile "curse.maven:extended-crafting-nomifactory-edition-398267:4592627"
     deobfCompile "curse.maven:cucumber-272335:2645867"
+    deobfCompile "curse.maven:artisan-worktables-284351:3205284"
+    deobfCompile "curse.maven:athenaeum-284350:4633750"
+    deobfCompile "curse.maven:dropt-284973:3758733"
 }
 
 sourceSets {

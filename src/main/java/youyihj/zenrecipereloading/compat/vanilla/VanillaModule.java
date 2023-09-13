@@ -1,6 +1,7 @@
 package youyihj.zenrecipereloading.compat.vanilla;
 
 import crafttweaker.CraftTweakerAPI;
+import crafttweaker.mc1120.CraftTweaker;
 import crafttweaker.mc1120.actions.*;
 import crafttweaker.mc1120.furnace.MCFurnaceManager;
 import crafttweaker.mc1120.recipes.MCRecipeManager;
@@ -18,6 +19,7 @@ public class VanillaModule extends PlainModule {
         trackActions(MCRecipeManager.recipesToAdd);
         trackActions(MCFurnaceManager.recipesToRemove);
         trackActions(MCFurnaceManager.recipesToAdd);
+        trackActions(CraftTweaker.LATE_ACTIONS);
         addCallbackFactory(MCRecipeManager.ActionBaseRemoveRecipes.class, CraftingRecipeCallbacks.RecipeRemoval::new);
         addCallbackFactory(MCRecipeManager.ActionBaseAddRecipe.class, CraftingRecipeCallbacks.RecipeAddition::new);
         addCallbackFactory(ActionAddFurnaceRecipe.class, FurnaceRecipeCallbacks.Addition::new);

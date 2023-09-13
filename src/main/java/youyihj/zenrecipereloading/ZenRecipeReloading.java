@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 import youyihj.zenrecipereloading.command.ReloadJEICommand;
+import youyihj.zenrecipereloading.compat.artisanworktables.ArtisanWorktablesModule;
 import youyihj.zenrecipereloading.compat.avaritia.AvaritiaModule;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
@@ -80,6 +81,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("extendedcrafting")) {
             ModuleRegistry.register(new ExtendedCraftingModule());
+        }
+        if (Loader.isModLoaded("artisanworktables")) {
+            ModuleRegistry.register(new ArtisanWorktablesModule());
         }
     }
 

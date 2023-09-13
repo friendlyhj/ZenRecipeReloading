@@ -20,7 +20,8 @@ public class MixinLateInit implements ILateMixinLoader {
             "forestry",
             "avaritia",
             "tconstruct",
-            "gregtech"
+            "gregtech",
+            "artisanworktables"
     );
 
     @Override
