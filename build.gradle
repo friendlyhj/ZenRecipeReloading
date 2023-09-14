@@ -187,6 +187,7 @@ dependencies {
     compileOnly "curse.maven:artisan-worktables-284351:3205284"
     compileOnly "curse.maven:athenaeum-284350:4633750"
     compileOnly "curse.maven:dropt-284973:3758733"
+    deobfCompile "vazkii.patchouli:Patchouli:1.0-23.6"
 }
 
 sourceSets {

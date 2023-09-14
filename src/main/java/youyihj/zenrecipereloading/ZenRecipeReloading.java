@@ -19,6 +19,7 @@ import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
+import youyihj.zenrecipereloading.compat.patchouli.PatchouliModule;
 import youyihj.zenrecipereloading.compat.tconstruct.TconstructModule;
 import youyihj.zenrecipereloading.compat.thermalexpansion.ThermalExpansionModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
@@ -88,6 +89,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("dropt")) {
             ModuleRegistry.register(new DroptModule());
+        }
+        if (Loader.isModLoaded("patchouli")) {
+            ModuleRegistry.register(new PatchouliModule());
         }
     }
 
