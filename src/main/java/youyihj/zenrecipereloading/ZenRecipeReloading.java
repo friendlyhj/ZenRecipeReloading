@@ -13,6 +13,7 @@ import youyihj.zenrecipereloading.compat.artisanworktables.ArtisanWorktablesModu
 import youyihj.zenrecipereloading.compat.avaritia.AvaritiaModule;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
+import youyihj.zenrecipereloading.compat.dropt.DroptModule;
 import youyihj.zenrecipereloading.compat.extendedcrafting.ExtendedCraftingModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
@@ -84,6 +85,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("artisanworktables")) {
             ModuleRegistry.register(new ArtisanWorktablesModule());
+        }
+        if (Loader.isModLoaded("dropt")) {
+            ModuleRegistry.register(new DroptModule());
         }
     }
 
