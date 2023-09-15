@@ -6,6 +6,7 @@ import crafttweaker.mc1120.actions.*;
 import crafttweaker.mc1120.furnace.MCFurnaceManager;
 import crafttweaker.mc1120.recipes.MCRecipeManager;
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionRemoveRecipesNoIngredientsAccessor;
+import youyihj.zenrecipereloading.mixins.crafttweaker.MCRecipeManagerAccessor;
 import youyihj.zenrecipereloading.module.PlainModule;
 import youyihj.zenutils.api.reload.ScriptReloadEvent;
 import youyihj.zenutils.api.util.ZenUtilsGlobal;
@@ -35,6 +36,8 @@ public class VanillaModule extends PlainModule {
         ZenUtilsGlobal.addRegexLogFilter("Recipe name \\[.*\\] has duplicate uses, defaulting to calculated hash!");
         MCRecipeManager.refreshRecipes();
         ((ActionRemoveRecipesNoIngredientsAccessor) MCRecipeManager.actionRemoveRecipesNoIngredients).getOutputs().clear();
+        MCRecipeManagerAccessor.getUsedHashes().clear();
+        MCRecipeManagerAccessor.getUsedRecipeNames().clear();
         super.onReloadPre(event);
         CraftingRecipeCallbacks.getRecipeRegistry().unfreeze();
     }

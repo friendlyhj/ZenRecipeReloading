@@ -7,15 +7,16 @@
   "priority": 0,
   "refmap": "mixins.zenrecipereloading.refmap.json",
   "mixins": [
+    "ActionAddFurnaceRecipeAccessor",
     "ActionBaseAddRecipeAccessor",
     "ActionBaseRemoveRecipesMixin",
-    "ActionRemoveRecipesNoIngredientsAccessor",
-    "ActionAddFurnaceRecipeAccessor",
     "ActionFurnaceRemoveRecipeAccessor",
-    "ActionSetFuelAccessor",
     "ActionOreDictAddAllAccessor",
     "ActionOreDictAddItemAccessor",
-    "ActionOreDictRemoveItemAccessor"
+    "ActionOreDictRemoveItemAccessor",
+    "ActionRemoveRecipesNoIngredientsAccessor",
+    "ActionSetFuelAccessor",
+    "MCRecipeManagerAccessor"
   ],
   "client": [
   ]
