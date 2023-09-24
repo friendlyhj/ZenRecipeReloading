@@ -38,6 +38,8 @@ public class VanillaModule extends PlainModule {
         ((ActionRemoveRecipesNoIngredientsAccessor) MCRecipeManager.actionRemoveRecipesNoIngredients).getOutputs().clear();
         MCRecipeManagerAccessor.getUsedHashes().clear();
         MCRecipeManagerAccessor.getUsedRecipeNames().clear();
+        MCRecipeManager.transformerRecipes.clear();
+        MCRecipeManager.actionRecipes.clear();
         super.onReloadPre(event);
         CraftingRecipeCallbacks.getRecipeRegistry().unfreeze();
     }
