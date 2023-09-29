@@ -16,6 +16,7 @@ import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
 import youyihj.zenrecipereloading.compat.dropt.DroptModule;
 import youyihj.zenrecipereloading.compat.extendedcrafting.ExtendedCraftingModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
+import youyihj.zenrecipereloading.compat.gregtech.GregTechModule;
 import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
@@ -92,6 +93,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("patchouli")) {
             ModuleRegistry.register(new PatchouliModule());
+        }
+        if (Loader.isModLoaded("gregtech")) {
+            ModuleRegistry.register(new GregTechModule());
         }
     }
 
