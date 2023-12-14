@@ -5,6 +5,7 @@ import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
@@ -14,6 +15,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(value = ForgeRegistry.class, remap = false)
 public interface ForgeRegistryAccessor<V extends IForgeRegistryEntry<V>> {
     @Accessor
+    @Mutable
     void setDummyFactory(IForgeRegistry.DummyFactory<V> dummyFactory);
 
     @Invoker
