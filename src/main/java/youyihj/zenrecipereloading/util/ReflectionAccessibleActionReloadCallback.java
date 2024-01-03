@@ -42,7 +42,6 @@ public abstract class ReflectionAccessibleActionReloadCallback<T extends IAction
                 field.setAccessible(true);
                 FIELD_CACHE.put(actionClass, fieldName, field);
             } else {
-                //noinspection DataFlowIssue
                 throw new NoSuchFieldException(fieldName + " does not exist in " + actionClass.getSimpleName() + " or any of its superclasses.");
             }
         }
