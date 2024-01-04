@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import youyihj.zenrecipereloading.client.RuntimeProgressBarRender;
 import youyihj.zenrecipereloading.mixins.jei.JEIProxyClientAccessor;
 
 import static crafttweaker.mc1120.commands.SpecialMessagesChat.getNormalMessage;
@@ -29,10 +30,12 @@ public class ReloadJEIMessage implements IMessage {
         @Override
         public IMessage onMessage(ReloadJEIMessage reloadJEIMessage, MessageContext messageContext) {
             Minecraft.getMinecraft().addScheduledTask(() -> {
+                RuntimeProgressBarRender.start("Reloading JEI");
                 JEIProxyClientAccessor jeiProxy = (JEIProxyClientAccessor) JustEnoughItems.getProxy();
                 long a = System.currentTimeMillis();
                 jeiProxy.getStarter().start(jeiProxy.getPlugins(), jeiProxy.getTextures());
                 long b = System.currentTimeMillis();
+                RuntimeProgressBarRender.end();
                 Minecraft.getMinecraft().player.sendMessage(getNormalMessage("Reloaded JEI successfully in " + (b - a) + "ms"));
             });
             return null;

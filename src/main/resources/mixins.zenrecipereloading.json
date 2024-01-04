@@ -7,7 +7,8 @@
   "priority": 0,
   "refmap": "mixins.zenrecipereloading.refmap.json",
   "mixins": [
-    "forge.ForgeRegistryAccessor"
+    "forge.ForgeRegistryAccessor",
+    "forge.ProgressBarMixin"
   ],
   "client": [
   ]
