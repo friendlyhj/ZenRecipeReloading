@@ -118,7 +118,7 @@ dependencies {
     deobfCompile ('CraftTweaker2:CraftTweaker2-MC1120-Mod-JEI:1.12-4.+') {
         exclude group: 'deobf.mezz.jei'
     }
-    deobfCompile 'youyihj:zenutils:1.13.4'
+    deobfCompile 'curse.maven:zenutil-401178:4984714-sources-4984720'
 //    deobfCompile 'curse.maven:had-enough-items-557549:4451828'
     deobfCompile 'mezz.jei:jei_1.12.2:4.16.1.302'
 
