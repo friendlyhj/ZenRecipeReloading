@@ -4,30 +4,33 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraftforge.fml.common.ProgressManager;
+import youyihj.zenrecipereloading.mixins.vanilla.MinecraftAccessor;
 
 import java.util.Iterator;
 
 public class RuntimeProgressBarRender {
-    private static long lastUpdate = 0;
-    private static String renderTitle = null;
+    private static final ThreadLocal<Long> lastUpdate = ThreadLocal.withInitial(() -> 0L);
+    private static final ThreadLocal<String> renderTitle = new ThreadLocal<>();
 
     public static void start(String title) {
-        renderTitle = title;
+        renderTitle.set(title);
+        ((MinecraftAccessor) Minecraft.getMinecraft()).setIsGamePaused(true);
     }
 
     public static void end() {
-        renderTitle = null;
+        renderTitle.remove();
+        ((MinecraftAccessor) Minecraft.getMinecraft()).setIsGamePaused(false);
     }
 
     public static boolean shouldRender() {
-        return renderTitle != null;
+        return renderTitle.get() != null;
     }
 
     public static void render() {
-        if (Minecraft.getSystemTime() - lastUpdate < 33) { // 30 FPS
+        if (Minecraft.getSystemTime() - lastUpdate.get() < 33) { // 30 FPS
             return;
         }
-        lastUpdate = Minecraft.getSystemTime();
+        lastUpdate.set(Minecraft.getSystemTime());
 
         if (ProgressManager.barIterator().hasNext()) {
             Iterator<ProgressManager.ProgressBar> barIterator = ProgressManager.barIterator();
@@ -42,7 +45,7 @@ public class RuntimeProgressBarRender {
             mc.entityRenderer.setupOverlayRendering();
             // Draw the dirt background and status text...
             RenderAccess.drawBackground(res.getScaledWidth(), res.getScaledHeight());
-            RenderAccess.drawCenteredString(mc.fontRenderer, renderTitle, res.getScaledWidth() / 2, res.getScaledHeight() / 2 - 60, -1);
+            RenderAccess.drawCenteredString(mc.fontRenderer, renderTitle.get(), res.getScaledWidth() / 2, res.getScaledHeight() / 2 - 60, -1);
 
             int heightOffset = 0;
             while (barIterator.hasNext()) {

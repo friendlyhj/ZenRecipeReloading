@@ -11,5 +11,6 @@
     "forge.ProgressBarMixin"
   ],
   "client": [
+    "vanilla.MinecraftAccessor"
   ]
 }
