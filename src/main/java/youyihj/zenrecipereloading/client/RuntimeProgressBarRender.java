@@ -52,7 +52,6 @@ public class RuntimeProgressBarRender {
                 ProgressManager.ProgressBar bar = barIterator.next();
                 GlStateManager.pushMatrix();
                 RenderAccess.drawCenteredString(mc.fontRenderer, bar.getTitle() + " " + bar.getMessage(), res.getScaledWidth() / 2, res.getScaledHeight() / 2 + heightOffset - 24, -1);
-                GlStateManager.pushMatrix();
                 RenderAccess.drawRect(res.getScaledWidth() / 2 - 50, res.getScaledHeight() / 2 - 1 + heightOffset, res.getScaledWidth() / 2 + 50, res.getScaledHeight() / 2 + 1 + heightOffset, 0xFF001100);
                 RenderAccess.drawRect(res.getScaledWidth() / 2 - 50, res.getScaledHeight() / 2 - 1 + heightOffset, (res.getScaledWidth() / 2 - 50) + (bar.getStep() * 100 / bar.getSteps()), res.getScaledHeight() / 2 + 1 + heightOffset, 0xFF55FF55);
                 GlStateManager.popMatrix();
