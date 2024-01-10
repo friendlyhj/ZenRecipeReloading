@@ -31,7 +31,8 @@ public class OreDictCallbacks {
         @Override
         public void undo() {
             for (ItemStack item : toAdd) {
-                OreDictionary.getOres(getActionAccessor().getIdTarget(), false).remove(item);
+                NonNullList<ItemStack> list = OreDictionary.getOres(getActionAccessor().getIdTarget(), false);
+                list.removeIf(it -> it.isItemEqual(item));
             }
         }
 
@@ -49,7 +50,8 @@ public class OreDictCallbacks {
 
         @Override
         public void undo() {
-            OreDictionary.getOres(getActionAccessor().getId(), false).remove(getActionAccessor().getItem());
+            NonNullList<ItemStack> list = OreDictionary.getOres(getActionAccessor().getId(), false);
+            list.removeIf(it -> it.isItemEqual(getActionAccessor().getItem()));
         }
 
         @Override
