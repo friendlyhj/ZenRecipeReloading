@@ -22,6 +22,7 @@ import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.mekanism.MekanismModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.patchouli.PatchouliModule;
+import youyihj.zenrecipereloading.compat.pneumaticcraft.PneumaticCraftModule;
 import youyihj.zenrecipereloading.compat.tconstruct.TconstructModule;
 import youyihj.zenrecipereloading.compat.thermalexpansion.ThermalExpansionModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
@@ -100,6 +101,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("mekanism")) {
             ModuleRegistry.register(new MekanismModule());
+        }
+        if (Loader.isModLoaded("pneumaticcraft")) {
+            ModuleRegistry.register(new PneumaticCraftModule());
         }
     }
 
