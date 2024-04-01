@@ -11,9 +11,9 @@ import youyihj.zenutils.api.reload.ScriptReloadEvent;
 public class ImmersiveEngineeringModule extends PlainModule {
     @Override
     public void registerReloadCallbacks() {
-        PrivateActionReloadCallback.uncheckedRegister(ActionSmelterCallbacks.getActionName("Add"), ActionSmelterCallbacks.Add::new);
-        PrivateActionReloadCallback.uncheckedRegister(ActionSmelterCallbacks.getActionName("Remove"), ActionSmelterCallbacks.Remove::new);
-        PrivateActionReloadCallback.uncheckedRegister(ActionSmelterCallbacks.getActionName("RemoveAll"), ActionSmelterCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(AlloySmelterCallbacks.getActionName("Add"), AlloySmelterCallbacks.Add::new);
+        PrivateActionReloadCallback.uncheckedRegister(AlloySmelterCallbacks.getActionName("Remove"), AlloySmelterCallbacks.Remove::new);
+        PrivateActionReloadCallback.uncheckedRegister(AlloySmelterCallbacks.getActionName("RemoveAll"), AlloySmelterCallbacks.Remove::new);
 
         PrivateActionReloadCallback.uncheckedRegister(ArcFurnaceCallbacks.getActionName("Add"), ArcFurnaceCallbacks.Add::new);
         PrivateActionReloadCallback.uncheckedRegister(ArcFurnaceCallbacks.getActionName("Remove"), ArcFurnaceCallbacks.Remove::new);

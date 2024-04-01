@@ -6,9 +6,9 @@ import youyihj.zenrecipereloading.util.PrivateActionReloadCallback;
 
 import java.util.List;
 
-public class ActionSmelterCallbacks {
+public class AlloySmelterCallbacks {
     public static String getActionName(String path) {
-        return "blusunrize.immersiveengineering.common.util.compat.crafttweaker.ActionSmelter$" + path;
+        return "blusunrize.immersiveengineering.common.util.compat.crafttweaker.AlloySmelter$" + path;
     }
 
     public static class Add extends PrivateActionReloadCallback {

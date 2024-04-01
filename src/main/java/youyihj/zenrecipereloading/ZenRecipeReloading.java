@@ -77,7 +77,7 @@ public class ZenRecipeReloading {
         if (Loader.isModLoaded("avaritia")) {
             ModuleRegistry.register(new AvaritiaModule());
         }
-        if (Loader.isModLoaded("immersiveengieering")) {
+        if (Loader.isModLoaded("immersiveengineering")) {
             ModuleRegistry.register(new ImmersiveEngineeringModule());
         }
         if (Loader.isModLoaded("tconstruct")) {
