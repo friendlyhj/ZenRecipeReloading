@@ -155,7 +155,7 @@ dependencies {
 //    deobfCompile("betterwithmods:BetterWithMods:1.12-2.3.24-1068") {
 //        exclude group: 'mezz.jei'
 //    }
-    compileOnly("de.ellpeck.actuallyadditions:ActuallyAdditions:1.12.2-r152.16") {
+    compileOnly("curse.maven:actually-additions-228404:3117927") {
         exclude group: 'mezz.jei'
     }
     compileOnly("slimeknights.mantle:Mantle:1.12-1.3.3.+") {
