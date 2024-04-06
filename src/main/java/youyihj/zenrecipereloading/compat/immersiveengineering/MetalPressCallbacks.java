@@ -37,7 +37,7 @@ public class MetalPressCallbacks {
 
         @Override
         public void undo() {
-            List<MetalPressRecipe> removedRecipes = getActionField("removeRecipes");
+            List<MetalPressRecipe> removedRecipes = getActionField("removedRecipes");
             for (MetalPressRecipe removedRecipe : removedRecipes) {
                 MetalPressRecipe.recipeList.put(removedRecipe.mold, removedRecipe);
             }
