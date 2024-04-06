@@ -37,7 +37,7 @@ public class BlastFurnaceCallbacks {
 
         @Override
         public void undo() {
-            List<BlastFurnaceRecipe> removed = getActionField("removeRecipes");
+            List<BlastFurnaceRecipe> removed = getActionField("removedRecipes");
             BlastFurnaceRecipe.recipeList.addAll(removed);
         }
 
