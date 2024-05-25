@@ -18,6 +18,7 @@ import youyihj.zenrecipereloading.compat.extendedcrafting.ExtendedCraftingModule
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.gregtech.GregTechModule;
 import youyihj.zenrecipereloading.compat.immersiveengineering.ImmersiveEngineeringModule;
+import youyihj.zenrecipereloading.compat.iwc.InWorldCraftingModule;
 import youyihj.zenrecipereloading.compat.jei.JEIModule;
 import youyihj.zenrecipereloading.compat.mekanism.MekanismModule;
 import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
@@ -104,6 +105,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("pneumaticcraft")) {
             ModuleRegistry.register(new PneumaticCraftModule());
+        }
+        if (Loader.isModLoaded("inworldcrafting")) {
+            ModuleRegistry.register(new InWorldCraftingModule());
         }
     }
 

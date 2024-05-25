@@ -190,6 +190,7 @@ dependencies {
     compileOnly "vazkii.patchouli:Patchouli:1.0-23.6"
     compileOnly "curse.maven:mekanism-268560:2835175"
     compileOnly "curse.maven:pneumaticcraft-repressurized-281849:2978408"
+    compileOnly "curse.maven:inworldcrafting-311938:2683267"
 }
 
 sourceSets {
