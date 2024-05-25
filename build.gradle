@@ -181,7 +181,7 @@ dependencies {
     // End From ModTweaker
 
     compileOnly "curse.maven:avaritia-261348:3143349"
-    compileOnly "curse.maven:gregtech-ce-unofficial-557242:4701483"
+    compileOnly "curse.maven:gregtech-ce-unofficial-557242:5322654"
     compileOnly "curse.maven:extended-crafting-nomifactory-edition-398267:4592627"
     compileOnly "curse.maven:cucumber-272335:2645867"
     compileOnly "curse.maven:artisan-worktables-284351:3205284"
