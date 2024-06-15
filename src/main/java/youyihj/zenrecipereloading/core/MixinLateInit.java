@@ -23,7 +23,8 @@ public class MixinLateInit implements ILateMixinLoader {
             "gregtech",
             "artisanworktables",
             "mekanism",
-            "pneumaticcraft"
+            "pneumaticcraft",
+            "embers"
     );
 
     @Override

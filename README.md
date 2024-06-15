@@ -24,3 +24,5 @@ Supported Operations:
 * Tinker's Construct
 * GregTech CE Unofficial (only Machine Recipes)
 * Extended Crafting
+* In World Crafting
+* Embers

@@ -14,6 +14,7 @@ import youyihj.zenrecipereloading.compat.avaritia.AvaritiaModule;
 import youyihj.zenrecipereloading.compat.bloodmagic.BloodMagicModule;
 import youyihj.zenrecipereloading.compat.botania.BotaniaModule;
 import youyihj.zenrecipereloading.compat.dropt.DroptModule;
+import youyihj.zenrecipereloading.compat.embers.EmbersModule;
 import youyihj.zenrecipereloading.compat.extendedcrafting.ExtendedCraftingModule;
 import youyihj.zenrecipereloading.compat.forestry.ForestryModule;
 import youyihj.zenrecipereloading.compat.gregtech.GregTechModule;
@@ -108,6 +109,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("inworldcrafting")) {
             ModuleRegistry.register(new InWorldCraftingModule());
+        }
+        if (Loader.isModLoaded("embers")) {
+            ModuleRegistry.register(new EmbersModule());
         }
     }
 

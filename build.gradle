@@ -51,9 +51,9 @@ minecraft {
         args << '-Dmixin.checks.interfaces=true'
         args << '-Dmixin.debug.export=true'
     }
+    useDepAts = true
     clientJvmArgs.addAll(args)
     serverJvmArgs.addAll(args)
-    useDepAts = false
 }
 
 repositories {
@@ -191,6 +191,7 @@ dependencies {
     compileOnly "curse.maven:mekanism-268560:2835175"
     compileOnly "curse.maven:pneumaticcraft-repressurized-281849:2978408"
     compileOnly "curse.maven:inworldcrafting-311938:2683267"
+    compileOnly "curse.maven:embers-extended-life-936489:5321973"
 }
 
 sourceSets {
