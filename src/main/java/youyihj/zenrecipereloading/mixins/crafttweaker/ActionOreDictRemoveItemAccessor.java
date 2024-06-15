@@ -1,6 +1,5 @@
 package youyihj.zenrecipereloading.mixins.crafttweaker;
 
-import crafttweaker.mc1120.actions.ActionOreDictAddItem;
 import crafttweaker.mc1120.actions.ActionOreDictRemoveItem;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
