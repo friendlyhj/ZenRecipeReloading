@@ -113,7 +113,7 @@ dependencies {
         compile 'com.cleanroommc:assetmover:2.0'
     }
     if (project.use_mixins.toBoolean()) {
-        compile 'zone.rong:mixinbooter:7.0'
+        compile 'zone.rong:mixinbooter:9.1'
     }
     deobfCompile ('CraftTweaker2:CraftTweaker2-MC1120-Mod-JEI:1.12-4.+') {
         exclude group: 'deobf.mezz.jei'

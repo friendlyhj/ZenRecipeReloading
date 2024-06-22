@@ -1,4 +1,4 @@
-package youyihj.zenrecipereloading.mixins.embers;
+package youyihj.zenrecipereloading.compat.embers;
 
 import teamroots.embers.api.misc.IMetalCoefficient;
 
