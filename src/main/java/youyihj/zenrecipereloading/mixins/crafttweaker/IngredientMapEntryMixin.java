@@ -20,7 +20,9 @@ public class IngredientMapEntryMixin<T> {
     // I don't know how IngredientMap.unregister is even supposed to work without this, but I suppose it wasn't implemented completely
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof IngredientMap.IngredientMapEntry<?> other)) return false;
+        if (!(obj instanceof IngredientMap.IngredientMapEntry<?>)) return false;
+
+        IngredientMap.IngredientMapEntry<?> other = (IngredientMap.IngredientMapEntry<?>) obj;
 
         //noinspection DataFlowIssue
         return this.ingredient.equals(((IngredientMapEntryMixin<?>)(Object)other).ingredient) &&
