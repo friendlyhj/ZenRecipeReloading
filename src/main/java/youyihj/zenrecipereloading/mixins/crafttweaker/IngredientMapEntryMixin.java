@@ -5,9 +5,10 @@ import crafttweaker.api.util.IngredientMap;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import youyihj.zenrecipereloading.compat.vanilla.IngredientMapEntryAccessor;
 
 @Mixin(value = IngredientMap.IngredientMapEntry.class, remap = false)
-public class IngredientMapEntryMixin<T> {
+public class IngredientMapEntryMixin<T> implements IngredientMapEntryAccessor<T> {
     @Shadow
     @Final
     private IIngredient ingredient;
@@ -24,8 +25,19 @@ public class IngredientMapEntryMixin<T> {
 
         IngredientMap.IngredientMapEntry<?> other = (IngredientMap.IngredientMapEntry<?>) obj;
 
-        //noinspection DataFlowIssue
-        return this.ingredient.equals(((IngredientMapEntryMixin<?>)(Object)other).ingredient) &&
-               this.entry.equals(((IngredientMapEntryMixin<?>)(Object)other).entry);
+        // noinspection unchecked
+        IngredientMapEntryAccessor<T> otherAccessor = (IngredientMapEntryAccessor<T>) other;
+        return this.ingredient.equals(otherAccessor.zenRecipeReload$getIngredient()) &&
+               this.entry.equals(otherAccessor.zenRecipeReload$getEntry());
+    }
+
+    @Override
+    public IIngredient zenRecipeReload$getIngredient() {
+        return ingredient;
+    }
+
+    @Override
+    public T zenRecipeReload$getEntry() {
+        return entry;
     }
 }
