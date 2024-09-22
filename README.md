@@ -14,6 +14,7 @@ Supported Operations:
 * Furnace recipes and fuel
 * Ore Dictionary (except `mirror`)
 * JEI hide and description
+* Tooltips
 * Actually Addition
 * Blood Magic
 * Botania (except lexicon)
