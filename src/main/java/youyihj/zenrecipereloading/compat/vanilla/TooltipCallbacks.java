@@ -10,6 +10,9 @@ import youyihj.zenrecipereloading.util.PrivateActionReloadCallback;
 
 import java.util.regex.Pattern;
 
+/**
+ * @author kurrycat
+ */
 public class TooltipCallbacks {
     public static String getActionName(String path) {
         return "crafttweaker.api.tooltip.IngredientTooltips$" + path;

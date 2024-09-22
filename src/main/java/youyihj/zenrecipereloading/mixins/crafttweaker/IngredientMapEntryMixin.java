@@ -7,6 +7,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import youyihj.zenrecipereloading.compat.vanilla.IngredientMapEntryAccessor;
 
+/**
+ * @author kurrycat
+ */
 @Mixin(value = IngredientMap.IngredientMapEntry.class, remap = false)
 public class IngredientMapEntryMixin<T> implements IngredientMapEntryAccessor<T> {
     @Shadow
