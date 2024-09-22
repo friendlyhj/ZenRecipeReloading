@@ -16,6 +16,8 @@
     "ActionOreDictRemoveItemAccessor",
     "ActionRemoveRecipesNoIngredientsAccessor",
     "ActionSetFuelAccessor",
+    "IngredientMapEntryMixin",
+    "IngredientTooltipsAccessor",
     "MCRecipeManagerAccessor"
   ],
   "client": [

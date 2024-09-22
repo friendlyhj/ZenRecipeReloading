@@ -8,6 +8,7 @@ import crafttweaker.mc1120.recipes.MCRecipeManager;
 import youyihj.zenrecipereloading.mixins.crafttweaker.ActionRemoveRecipesNoIngredientsAccessor;
 import youyihj.zenrecipereloading.mixins.crafttweaker.MCRecipeManagerAccessor;
 import youyihj.zenrecipereloading.module.PlainModule;
+import youyihj.zenrecipereloading.util.PrivateActionReloadCallback;
 import youyihj.zenutils.api.reload.ScriptReloadEvent;
 import youyihj.zenutils.api.util.ZenUtilsGlobal;
 
@@ -29,6 +30,17 @@ public class VanillaModule extends PlainModule {
         addCallbackFactory(ActionOreDictAddAll.class, OreDictCallbacks.AddAll::new);
         addCallbackFactory(ActionOreDictAddItem.class, OreDictCallbacks.AddItem::new);
         addCallbackFactory(ActionOreDictRemoveItem.class, OreDictCallbacks.RemoveItem::new);
+    }
+
+    @Override
+    public void registerReloadCallbacks() {
+        super.registerReloadCallbacks();
+
+        PrivateActionReloadCallback.uncheckedRegister(TooltipCallbacks.getActionName("AddTooltipAction"), TooltipCallbacks.AddTooltipAction::new);
+        PrivateActionReloadCallback.uncheckedRegister(TooltipCallbacks.getActionName("RemoveTooltipAction"), TooltipCallbacks.RemoveTooltipAction::new);
+        PrivateActionReloadCallback.uncheckedRegister(TooltipCallbacks.getActionName("AddAdvancedTooltipAction"), TooltipCallbacks.AddAdvancedTooltipAction::new);
+        PrivateActionReloadCallback.uncheckedRegister(TooltipCallbacks.getActionName("ClearTooltipAction"), TooltipCallbacks.ClearTooltipAction::new);
+        PrivateActionReloadCallback.uncheckedRegister(TooltipCallbacks.getActionName("RemoveTooltipLineAction"), TooltipCallbacks.RemoveTooltipLineAction::new);
     }
 
     @Override
