@@ -1,7 +1,7 @@
 {
   "required": true,
   "compatibilityLevel": "JAVA_8",
-  "package": "youyihj.zenrecipereloading.mixins",
+  "package": "youyihj.zenrecipereloading.mixins.jei",
   "minVersion": "0.7.11",
   "setSourceFile": true,
   "priority": 0,
@@ -9,6 +9,6 @@
   "mixins": [
   ],
   "client": [
-    "jei.JEIProxyClientAccessor"
+    "JEIProxyClientAccessor"
   ]
 }

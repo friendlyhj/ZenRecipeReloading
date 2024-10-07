@@ -42,7 +42,7 @@ public class ZenRecipeReloading {
 
     public static final String MOD_ID = "zenrecipereloading";
     public static final String MOD_NAME = "ZenRecipeReloading";
-    public static final String VERSION = "1.4.2";
+    public static final String VERSION = "1.4.3";
     public static final String DEPENDENCIES = "required-after:zenutils@[1.16.4,);required-after:jei;required-after:modtweaker";
 
     /**
