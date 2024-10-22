@@ -53,13 +53,11 @@ public class VanillaModule extends PlainModule {
         MCRecipeManager.transformerRecipes.clear();
         MCRecipeManager.actionRecipes.clear();
         super.onReloadPre(event);
-        CraftingRecipeCallbacks.getRecipeRegistry().unfreeze();
     }
 
     @Override
     public void onReloadPost(ScriptReloadEvent.Post event) {
         CraftTweakerAPI.apply(MCRecipeManager.actionRemoveRecipesNoIngredients);
         super.onReloadPost(event);
-        CraftingRecipeCallbacks.getRecipeRegistry().freeze();
     }
 }

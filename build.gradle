@@ -192,6 +192,8 @@ dependencies {
     compileOnly "curse.maven:pneumaticcraft-repressurized-281849:2978408"
     compileOnly "curse.maven:inworldcrafting-311938:2683267"
     compileOnly "curse.maven:embers-extended-life-936489:5321973"
+    compileOnly "curse.maven:thaumcraft-223628:2629023"
+    compileOnly "curse.maven:thaumic-jei-285492:5646810"
 }
 
 sourceSets {

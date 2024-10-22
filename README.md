@@ -27,3 +27,4 @@ Supported Operations:
 * Extended Crafting
 * In World Crafting
 * Embers
+* Thaumcraft Arcane Workbench & Crucible & Infusion 

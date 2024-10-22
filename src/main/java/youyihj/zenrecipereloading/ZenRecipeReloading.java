@@ -26,6 +26,7 @@ import youyihj.zenrecipereloading.compat.modtweaker.ModTweakerModule;
 import youyihj.zenrecipereloading.compat.patchouli.PatchouliModule;
 import youyihj.zenrecipereloading.compat.pneumaticcraft.PneumaticCraftModule;
 import youyihj.zenrecipereloading.compat.tconstruct.TconstructModule;
+import youyihj.zenrecipereloading.compat.thaumcraft.ThaumcraftModule;
 import youyihj.zenrecipereloading.compat.thermalexpansion.ThermalExpansionModule;
 import youyihj.zenrecipereloading.compat.vanilla.CraftingRecipeCallbacks;
 import youyihj.zenrecipereloading.compat.vanilla.DummyRecipe;
@@ -112,6 +113,9 @@ public class ZenRecipeReloading {
         }
         if (Loader.isModLoaded("embers")) {
             ModuleRegistry.register(new EmbersModule());
+        }
+        if (Loader.isModLoaded("thaumcraft")) {
+            ModuleRegistry.register(new ThaumcraftModule());
         }
     }
 

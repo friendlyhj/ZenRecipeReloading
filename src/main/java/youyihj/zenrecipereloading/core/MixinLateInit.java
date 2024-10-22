@@ -24,7 +24,8 @@ public class MixinLateInit implements ILateMixinLoader {
             "artisanworktables",
             "mekanism",
             "pneumaticcraft",
-            "embers"
+            "embers",
+            "thaumcraft"
     );
 
     @Override
