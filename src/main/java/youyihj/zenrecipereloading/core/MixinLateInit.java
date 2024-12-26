@@ -25,7 +25,8 @@ public class MixinLateInit implements ILateMixinLoader {
             "mekanism",
             "pneumaticcraft",
             "embers",
-            "thaumcraft"
+            "thaumcraft",
+            "immersiveengineering"
     );
 
     @Override
